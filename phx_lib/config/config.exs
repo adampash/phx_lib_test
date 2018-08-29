@@ -10,8 +10,8 @@ config :phx_lib, PhxLibWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "s43FsT0EifkhKw9pYr94FOSJE4+/+QcaJL5EwqoL/m8RpS2QWhKvQZdxv2G+0qLN",
   render_errors: [view: PhxLibWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: PhxLib.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: PhxLib.PubSub, adapter: Phoenix.PubSub.PG2],
+  server: true
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -20,4 +20,4 @@ config :logger, :console,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"

@@ -2,6 +2,12 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+config :phx_lib, PhxLibWeb.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "s43FsT0EifkhKw9pYr94FOSJE4+/+QcaJL5EwqoL/m8RpS2QWhKvQZdxv2G+0qLN",
+  render_errors: [view: PhxLibWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: PhxLib.PubSub, adapter: Phoenix.PubSub.PG2],
+  server: true
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
